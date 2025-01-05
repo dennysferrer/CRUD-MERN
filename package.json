@@ -1,0 +1,30 @@
+{
+  "name": "crud-mern",
+  "version": "1.0.0",
+  "description": "CRUD con Nodejs-Express en el backend, con base de datos MongoDB y en el frontend React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --env-file=.env src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennysferrer/CRUD-MERN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/dennysferrer/CRUD-MERN/issues"
+  },
+  "homepage": "https://github.com/dennysferrer/CRUD-MERN#readme",
+  "dependencies": {
+    "express": "4.21.2",
+    "mongoose": "^8.9.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
