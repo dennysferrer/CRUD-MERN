@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
-import router from './routes/auth.routes.js';
+import routerAuth from './routes/auth.routes.js';
+import routerTasks from './routes/task.routes.js';
 import cookieParser from 'cookie-parser'
 
 
@@ -12,7 +13,8 @@ app.use(express.json());
 app.use(cookieParser())
 
 // Routes
-app.use('/api', router)
+app.use('/api', routerAuth)
+app.use('/api', routerTasks)
 
 
 export default app;

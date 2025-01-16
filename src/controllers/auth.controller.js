@@ -51,7 +51,23 @@ export const loginController = async (req, res) => {
     }
 }
 
+export const logoutController = async (req, res) => {
+    res.cookie('token', '', {
+        httpOnly: true,
+        secure: true,
+        expires: new Date(0)
+    })
+    return res.status(200).send('User logged out');
+}
+
 export const profileController = async (req, res) => {
     const userProfile = await User.findById(  req.user.id )
-    res.status(200).send(userProfile)
-}
+    if (!userProfile) return res.status(404).send('User not found, you should register');
+    res.status(200).json({
+        "id": userProfile._id,
+        "username": userProfile.username,
+        "email": userProfile.email,
+        "createdAt": userProfile.createdAt,
+        "updatedAt": userProfile.updatedAt
+    })
+}   
